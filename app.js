@@ -7,24 +7,24 @@ const app = express();
 const port = 3000;
 
 // PostgreSQL configuration
-const db = new Client({
-    user: 'username',
-    host: 'localhost',
-    database: 'input_output',
-    password: 'postgressruju',
-    port: 5432
-});
+// const db = new Client({
+//     user: 'username',
+//     host: 'localhost',
+//     database: 'input_output',
+//     password: 'postgressruju',
+//     port: 5432
+// });
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-db.connect();
+// db.connect();
 
 // Routes
 app.get('/', (req, res) => {
-    res.render('file_name');
+    res.render('index');
 });
 
 app.post('/submit', async (req, res) => {
